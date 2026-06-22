@@ -17,7 +17,12 @@ box-sizing:border-box;
 }
 
 body{
-background:#030712;
+background:
+radial-gradient(circle at top,
+#3b003b 0%,
+#1a001f 40%,
+#05010a 100%);
+
 font-family:'Orbitron',sans-serif;
 color:white;
 overflow-x:hidden;
@@ -44,7 +49,7 @@ to{opacity:1;}
 .container{
 position:relative;
 z-index:1;
-max-width:900px;
+max-width:1000px;
 margin:auto;
 padding:40px 20px;
 }
@@ -53,41 +58,47 @@ padding:40px 20px;
 
 .title{
 text-align:center;
-font-size:3rem;
 
-margin-bottom:40px;
+font-size:clamp(2.5rem,7vw,4rem);
+
+margin-bottom:50px;
+
+color:white;
 
 text-shadow:
-0 0 10px cyan,
-0 0 20px cyan,
-0 0 40px cyan;
+0 0 10px #ff69b4,
+0 0 20px #ff69b4,
+0 0 40px #ff69b4,
+0 0 80px #ff69b4;
 }
 
 /* Card */
 
 .card{
-background:rgba(255,255,255,.05);
+background:rgba(255,105,180,.05);
 
-border:1px solid rgba(0,255,255,.3);
+border:1px solid rgba(255,105,180,.4);
 
 border-radius:25px;
 
 padding:30px;
 
+margin-bottom:30px;
+
 backdrop-filter:blur(10px);
 
 box-shadow:
-0 0 20px rgba(0,255,255,.15);
+0 0 20px rgba(255,105,180,.2);
 }
 
 .card h2{
+color:#ff69b4;
 margin-bottom:20px;
-color:#00ffff;
 }
 
 .info{
 line-height:2;
-font-size:0.9rem;
+font-size:1rem;
 }
 
 /* Hobbies */
@@ -95,81 +106,83 @@ font-size:0.9rem;
 .hobbies{
 display:grid;
 grid-template-columns:
-repeat(auto-fit,minmax(150px,1fr));
+repeat(auto-fit,minmax(220px,1fr));
 
-gap:15px;
-margin-top:20px;
-  }
+gap:20px;
+}
 
 .hobby{
-background:rgba(255,255,255,.05);
+background:rgba(255,105,180,.05);
 
-padding:20px;
+border:1px solid rgba(255,105,180,.4);
 
-border-radius:15px;
+border-radius:20px;
 
-display:flex;
-align-items:center;
-justify-content:center;
+padding:25px;
 
 text-align:center;
 
-min-height:140px;
-
-font-size:1rem;
-
 transition:.3s;
-
-border:1px solid rgba(255,105,180,.4);
 }
 
 .hobby:hover{
 
-transform:translateY(-5px);
+transform:translateY(-8px);
+
+box-shadow:
+0 0 15px #ff69b4,
+0 0 30px #ff69b4;
+}
+
+.icon{
+font-size:3rem;
+margin-bottom:10px;
+}
+
+.hobby h3{
+color:#ff69b4;
+margin-bottom:10px;
+}
+
+/* Tombol */
+
+.gallery-btn{
+display:block;
+
+width:max-content;
+
+margin:40px auto;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+border:2px solid #ff69b4;
 
 box-shadow:
 0 0 10px #ff69b4,
-0 0 20px #ff69b4,
-0 0 40px #ff69b4;
+0 0 20px #ff69b4;
 
+transition:.3s;
+}
+
+.gallery-btn:hover{
+
+background:#ff69b4;
+
+color:black;
 }
 
 /* Footer */
 
-.fade-up{
-opacity:0;
-
-transform:translateY(40px);
-
-animation:fadeUp 1s forwards;
-}
-
-.delay1{
-animation-delay:.3s;
-}
-
-.delay2{
-animation-delay:.8s;
-}
-  
 .footer{
 text-align:center;
-margin-top:40px;
+margin-top:30px;
 opacity:.8;
-}
-
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(40px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
 }
 
 </style>
@@ -180,47 +193,61 @@ transform:translateY(0);
 <div class="container">
 
 <h1 class="title">
-CIE CIE STALKING🤭
+CIE CIE STALKING 💖
 </h1>
 
-<div class="card fade-up delay1">
+<div class="card">
 
 <h2>ABOUT ME</h2>
 
 <div class="info">
 
-<p>Nama: Kanda </p>
+<p>👤 Nama : Kanda</p>
 
-<p>Jenis Kelamin: Pria Sigma😎</p>
+<p>😎 Pria Sigma</p>
 
-<p>Status: Jarang pasang status😭</p>
+<p>😭 Jarang pasang status</p>
 
-<p>Kenalan lebih lanjut chat aja🤪</p>
+<p>🤪 Kenalan lebih lanjut? Chat aja</p>
 
 </div>
 
-<hr style="margin:25px 0; opacity:.3;">
-
-<h2>HOBI KU</h2>
+</div>
 
 <div class="hobbies">
 
-<div class="hobby">🏀<br>Basket</div>
+<div class="hobby">
+<div class="icon">🏀</div>
+<h3>BASKET</h3>
+<p>Suka latihan basket dan main bareng teman.</p>
+</div>
 
-<div class="hobby">🎸<br>Gitar</div>
+<div class="hobby">
+<div class="icon">🎸</div>
+<h3>GITAR</h3>
+<p>Suka cover lagu dan belajar chord baru.</p>
+</div>
 
-<div class="hobby">🎵<br>Musik</div>
+<div class="hobby">
+<div class="icon">🎵</div>
+<h3>MUSIK</h3>
+<p>Teman sehari-hari saat belajar dan santai.</p>
+</div>
 
-<div class="hobby">💪<br>Olahraga</div>
-
+<div class="hobby">
+<div class="icon">💖</div>
+<h3>SWIFTIE</h3>
+<p>Enchanted, All Too Well, Fortnight, So High School.</p>
 </div>
 
 </div>
 
-<div class="footer fade-up delay2">
+<a href="gallery.html" class="gallery-btn">
+📸 LIHAT GALERI
+</a>
 
-LANJUT STALKING YA
-
+<div class="footer">
+LANJUT STALKING YA 💕
 </div>
 
 </div>
@@ -229,7 +256,7 @@ LANJUT STALKING YA
 
 /* Bintang */
 
-for(let i=0;i<200;i++){
+for(let i=0;i<150;i++){
 
 let star=document.createElement("div");
 

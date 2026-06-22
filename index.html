@@ -332,8 +332,20 @@ transform:translateX(0);
 }
 
 body.hyperjump{
-animation:hyperJump 1.8s forwards;
+animation:
+shake .15s 6,
+hyperJump 1.8s forwards;
 }
+
+@keyframes shake{
+
+0%{transform:translate(0);}
+25%{transform:translate(3px,-3px);}
+50%{transform:translate(-3px,3px);}
+75%{transform:translate(3px,3px);}
+100%{transform:translate(0);}
+
+  }
 
 @keyframes hyperJump{
 

@@ -537,5 +537,21 @@ window.location.href="home.html";
 
 </script>
 
+<script>
+
+window.addEventListener("pageshow", function(){
+
+document.body.classList.remove("hyperjump");
+
+const btn=document.getElementById("enterBtn");
+
+if(btn){
+btn.classList.remove("hyper");
+}
+
+});
+
+</script>
+
 </body>
 </html>

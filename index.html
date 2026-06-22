@@ -401,7 +401,18 @@ meteor.remove();
 
 }
 
-setInterval(createMeteor,10000);
+function randomMeteor(){
+
+    createMeteor();
+
+    const randomTime =
+    Math.random() * 5000 + 4000;
+
+    setTimeout(randomMeteor, randomTime);
+
+}
+
+randomMeteor();
 
 </script>
 

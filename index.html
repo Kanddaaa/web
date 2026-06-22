@@ -371,28 +371,6 @@ box-shadow:
 </style>
 </head>
 
-<script>
-
-const btn=document.getElementById("enterBtn");
-
-btn.addEventListener("click",function(e){
-
-e.preventDefault();
-
-btn.classList.add("hyper");
-
-document.body.classList.add("hyperjump");
-
-setTimeout(()=>{
-
-window.location.href="home.html";
-
-},1800);
-
-});
-
-</script>
- 
 <body>
 
 <div class="sun"></div>
@@ -472,6 +450,28 @@ function randomMeteor(){
 }
 
 randomMeteor();
+
+</script>
+
+<script>
+
+const btn=document.getElementById("enterBtn");
+
+btn.addEventListener("click",function(e){
+
+e.preventDefault();
+
+btn.classList.add("hyper");
+
+document.body.classList.add("hyperjump");
+
+setTimeout(()=>{
+
+window.location.href="home.html";
+
+},1800);
+
+});
 
 </script>
 

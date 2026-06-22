@@ -94,9 +94,10 @@ font-size:0.9rem;
 
 .hobbies{
 display:grid;
-grid-template-columns:1fr;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:15px;
-  }
+margin-top:20px;
+}
 
 margin-top:20px;
 }
@@ -128,10 +129,40 @@ box-shadow:
 
 /* Footer */
 
+.fade-up{
+opacity:0;
+
+transform:translateY(40px);
+
+animation:fadeUp 1s forwards;
+}
+
+.delay1{
+animation-delay:.3s;
+}
+
+.delay2{
+animation-delay:.8s;
+}
+  
 .footer{
 text-align:center;
 margin-top:40px;
 opacity:.8;
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
 }
 
 </style>
@@ -145,7 +176,7 @@ opacity:.8;
 CIE CIE STALKING🤭
 </h1>
 
-<div class="card">
+<div class="card fade-up delay1">
 
 <h2>ABOUT ME</h2>
 
@@ -179,9 +210,9 @@ CIE CIE STALKING🤭
 
 </div>
 
-<div class="footer">
+<div class="footer fade-up delay2">
 
-🚀 Welcome To KAKANDA ZONE 🚀
+LANJUT STALKING YA😱
 
 </div>
 

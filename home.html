@@ -362,10 +362,34 @@ text-shadow:
 
 }
 
+.page-transition{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:black;
+
+opacity:0;
+
+pointer-events:none;
+
+transition:.5s;
+
+z-index:9999;
+
+}
+  
 </style>
 </head>
 
 <body>
+
+<div class="page-transition"></div>
 
 <div class="container">
 
@@ -563,10 +587,15 @@ document.getElementById("aboutPage");
 const gallery=
 document.getElementById("galleryPage");
 
+const overlay=
+document.querySelector(".page-transition");
+
 about.style.opacity="0";
 
 about.style.transform=
-"scale(.85) translateY(-50px)";
+"scale(.6) translateY(-120px)";
+
+overlay.style.opacity=".6";
 
 setTimeout(()=>{
 
@@ -581,9 +610,11 @@ gallery.style.opacity="1";
 gallery.style.transform=
 "translateY(0)";
 
-},50);
+overlay.style.opacity="0";
 
-},800);
+},100);
+
+},700);
 
 }
 

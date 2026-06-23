@@ -403,7 +403,49 @@ transition:.5s;
 z-index:9999;
 
 }
-  
+
+.rain-photo{
+
+position:fixed;
+
+top:-100px;
+
+width:80px;
+
+height:80px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+z-index:999;
+
+pointer-events:none;
+
+animation:fall 5s linear forwards;
+
+}
+
+@keyframes fall{
+
+from{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+to{
+
+transform:translateY(120vh);
+
+opacity:0;
+
+}
+
+}
+     
 </style>
 </head>
 
@@ -558,6 +600,19 @@ My Besti Gueh🥰
 
 </div>
 
+<div class="card">
+
+<p class="gallery-note">
+My Besti Gueh🥰
+</p>
+
+<button class="gallery-btn"
+onclick="rainPhotos()">
+LIHAT BESTI 🤭
+</button>
+
+</div>
+
 </div>
 
 </div>
@@ -669,6 +724,27 @@ gallery.style.transform=
 
 }
 
+function rainPhotos(){
+
+const img =
+document.createElement("img");
+
+img.src = "besti1.jpg";
+
+img.classList.add("rain-photo");
+
+img.style.left = "40vw";
+
+document.body.appendChild(img);
+
+setTimeout(()=>{
+
+img.remove();
+
+},5000);
+
+  }
+  
 </script>
 
 </body>

@@ -798,8 +798,19 @@ img.classList.add(
 "rain-photo"
 );
 
-img.style.left =
-Math.random()*80 + "vw";
+let pos;
+
+do{
+
+pos = Math.random()*80;
+
+}while(
+Math.abs(pos - lastPos) < 20
+);
+
+img.style.left = pos + "vw";
+
+lastPos = pos;
 
 document.body.appendChild(img);
 

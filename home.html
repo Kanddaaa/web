@@ -759,14 +759,47 @@ gallery.style.transform=
 
 function rainPhotos(){
 
+const photos = [
+
+"besti1.jpg",
+"besti2.jpg",
+"besti3.jpg",
+"besti4.jpg",
+"besti5.jpg",
+"besti6.jpg",
+"besti7.jpg",
+"besti8.jpg",
+"besti9.jpg",
+"besti10.jpg"
+
+];
+
+let index = 0;
+
+const interval = setInterval(()=>{
+
+for(let i=0;i<2;i++){
+
+if(index >= photos.length){
+
+clearInterval(interval);
+
+return;
+
+}
+
 const img =
 document.createElement("img");
 
-img.src = "besti.jpg";
+img.src =
+photos[index];
 
-img.classList.add("rain-photo");
+img.classList.add(
+"rain-photo"
+);
 
-img.style.left = "40vw";
+img.style.left =
+Math.random()*80 + "vw";
 
 document.body.appendChild(img);
 
@@ -776,7 +809,13 @@ img.remove();
 
 },5000);
 
-  }
+index++;
+
+}
+
+},400);
+
+}
   
 </script>
 

@@ -746,19 +746,18 @@ about.style.display="none";
 
 gallery.style.display="block";
 
-document
-.getElementById("galleryTitle")
-.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
 setTimeout(()=>{
 
 gallery.style.opacity="1";
 
 gallery.style.transform=
 "translateY(0)";
+
+document.getElementById("galleryTitle")
+.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
 
 },100);
 

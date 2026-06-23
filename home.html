@@ -745,7 +745,9 @@ about.style.display="none";
 
 gallery.style.display="block";
 
-window.scrollTo(0,0);
+gallery.scrollIntoView({
+behavior:"smooth"
+});
 
 setTimeout(()=>{
 

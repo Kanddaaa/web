@@ -753,10 +753,9 @@ gallery.style.opacity="1";
 gallery.style.transform=
 "translateY(0)";
 
-document.getElementById("galleryTitle")
-.scrollIntoView({
-behavior:"smooth",
-block:"start"
+window.scrollTo({
+top: gallery.offsetTop - 20,
+behavior: "smooth"
 });
 
 },100);

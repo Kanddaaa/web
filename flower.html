@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>A Flower For You 🌸</title><style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:
+radial-gradient(circle at top,
+#1a001f 0%,
+#0b0b15 40%,
+#030712 100%);
+
+font-family:sans-serif;
+
+color:white;
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+text-align:center;
+
+padding:40px 20px;
+
+}
+
+/* Bunga jatuh */
+
+.flower{
+
+position:fixed;
+
+top:-50px;
+
+font-size:24px;
+
+animation:fall 8s linear forwards;
+
+pointer-events:none;
+
+}
+
+@keyframes fall{
+
+from{
+
+transform:
+translateY(0)
+rotate(0deg);
+
+opacity:1;
+
+}
+
+to{
+
+transform:
+translateY(120vh)
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+.title{
+
+font-size:3rem;
+
+margin-top:40px;
+
+text-shadow:
+0 0 10px #ff69b4,
+0 0 20px #ff69b4;
+
+}
+
+.message{
+
+margin-top:20px;
+
+font-size:1.2rem;
+
+opacity:.9;
+
+}
+
+.mainFlower{
+
+font-size:120px;
+
+cursor:pointer;
+
+margin:40px 0;
+
+transition:.3s;
+
+}
+
+.mainFlower:hover{
+
+transform:scale(1.1);
+
+}
+
+.card{
+
+background:rgba(255,255,255,.05);
+
+padding:25px;
+
+border-radius:20px;
+
+margin:25px auto;
+
+max-width:700px;
+
+border:1px solid rgba(255,255,255,.15);
+
+}
+
+.button{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:15px 30px;
+
+border-radius:50px;
+
+border:none;
+
+cursor:pointer;
+
+background:#ff69b4;
+
+color:white;
+
+font-size:1rem;
+
+}
+
+#giftContent{
+
+display:none;
+
+margin-top:20px;
+
+}
+
+.homeBtn{
+
+display:inline-block;
+
+margin-top:40px;
+
+padding:15px 30px;
+
+border-radius:50px;
+
+background:#ff69b4;
+
+color:white;
+
+text-decoration:none;
+
+}
+
+</style></head><body><h1 class="title">
+🌸 A FLOWER FOR YOU 🌸
+</h1><p class="message">
+Makasih udah stalking sampai sini 🤭
+</p><div class="mainFlower"
+onclick="bloomFlowers()">
+🌷
+</div><div class="card"><h2>
+🏆 ACHIEVEMENT UNLOCKED
+</h2><p>
+STALKER LEVEL MAX 😭💖
+</p></div><button class="button"
+onclick="showGift()">
+🎁 Buka Hadiah
+</button>
+
+<div id="giftContent"><h2>
+🎉 SURPRISE 🎉
+</h2><p>
+Masukkan GIF lucumu di sini 🤣💖
+</p><!-- Nanti tempel GIF di sini --></div><p style="margin-top:40px;">
+💖 Terima kasih sudah berkunjung 💖
+</p><a href="home.html"
+class="homeBtn">
+🏠 Kembali ke Home
+</a>
+
+<script>
+
+/* bunga jatuh terus */
+
+setInterval(()=>{
+
+let flower =
+document.createElement("div");
+
+flower.classList.add("flower");
+
+flower.innerHTML = "🌸";
+
+flower.style.left =
+Math.random()*100+"vw";
+
+flower.style.fontSize =
+(Math.random()*20+20)+"px";
+
+document.body.appendChild(flower);
+
+setTimeout(()=>{
+
+flower.remove();
+
+},8000);
+
+},500);
+
+/* bunga utama ditekan */
+
+function bloomFlowers(){
+
+for(let i=0;i<20;i++){
+
+let flower =
+document.createElement("div");
+
+flower.classList.add("flower");
+
+flower.innerHTML = "🌸";
+
+flower.style.left =
+(40 + Math.random()*20)+"vw";
+
+flower.style.top =
+"40vh";
+
+document.body.appendChild(flower);
+
+setTimeout(()=>{
+
+flower.remove();
+
+},5000);
+
+}
+
+}
+
+/* hadiah */
+
+function showGift(){
+
+document.getElementById(
+"giftContent"
+).style.display="block";
+
+}
+
+</script></body>
+  </html>

@@ -105,9 +105,7 @@ backdrop-filter:blur(10px);
 
 box-shadow:
 0 0 20px rgba(255,105,180,.15);
-
-transition:.5s;
-
+  
 }
 
 .music-section h2{
@@ -475,17 +473,6 @@ playlist.indexOf(song);
 music.src=song;
 
 music.play();
-
-const musicSection=
-document.querySelector(".music-section");
-
-musicSection.style.opacity="0";
-
-setTimeout(()=>{
-
-musicSection.style.display="none";
-
-},500);
 
 }
 

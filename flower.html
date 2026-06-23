@@ -101,7 +101,23 @@ cursor:pointer;
 
 margin:40px 0;
 
-transition:.3s;
+animation:flowerPulse 2s infinite;
+
+}
+
+@keyframes flowerPulse{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.1);
+
+}
 
 }
 
@@ -124,6 +140,10 @@ margin:25px auto;
 max-width:700px;
 
 border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 0 15px rgba(255,105,180,.3),
+0 0 30px rgba(255,105,180,.15);
 
 }
 
@@ -152,6 +172,10 @@ font-size:1rem;
 #giftContent{
 
 display:none;
+
+opacity:0;
+
+transition:.8s;
 
 margin-top:20px;
 
@@ -266,9 +290,18 @@ flower.remove();
 
 function showGift(){
 
+const gift =
 document.getElementById(
 "giftContent"
-).style.display="block";
+);
+
+gift.style.display="block";
+
+setTimeout(()=>{
+
+gift.style.opacity="1";
+
+},50);
 
 }
 

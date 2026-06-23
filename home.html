@@ -87,6 +87,86 @@ text-shadow:
 
 /* Card */
 
+.music-section{
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:25px;
+
+padding:25px;
+
+margin-bottom:30px;
+
+text-align:center;
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+0 0 20px rgba(255,105,180,.15);
+
+}
+
+.music-section h2{
+
+color:#ffd6ec;
+
+margin-bottom:15px;
+
+}
+
+.music-text{
+
+margin-bottom:15px;
+
+opacity:.9;
+
+}
+
+.song-btn{
+
+width:100%;
+
+padding:12px;
+
+margin:8px 0;
+
+border:none;
+
+border-radius:15px;
+
+background:
+rgba(255,105,180,.15);
+
+color:white;
+
+font-family:'Orbitron',sans-serif;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.song-btn:hover{
+
+background:#ff69b4;
+
+transform:scale(1.02);
+
+}
+
+.music-note{
+
+margin-top:15px;
+
+opacity:.7;
+
+font-size:.85rem;
+
+}
+
 .card{
 background:rgba(255,255,255,.03);
 
@@ -249,6 +329,37 @@ transform:translateY(0);
 CIE CIE STALKING🤭
 </h1>
 
+<div class="music-section">
+
+<h2>🎵 PILIH SOUNDTRACK</h2>
+
+<p class="music-text">
+Stalking sambil dengar lagu enak kali ya😋
+</p>
+
+<button class="song-btn"
+onclick="playSong('love-story.mp3')">
+💖 Love Story
+</button>
+
+<button class="song-btn"
+onclick="playSong('glue-song.mp3')">
+💖 Glue Song
+</button>
+
+<button class="song-btn"
+onclick="playSong('until-i-found-you.mp3')">
+💖 Until I Found You
+</button>
+
+<p class="music-note">
+Ga pengen pake musik? scroll aja
+</p>
+
+<audio id="bgMusic" loop></audio>
+
+</div>
+
 <div class="card">
 
 <h2>ABOUT ME</h2>
@@ -269,7 +380,7 @@ CIE CIE STALKING🤭
 
 <p>• Main basket🏀 (my love my world my girlfriend is basket🥰)</p>
 
-<p>• Suka Olahraga, apapun olahraganya. joging bareng yuk🤪</p>
+<p>• Suka Banget Olahraga, apapun olahraganya👊. (joging bareng yuk🤪)</p>
 
 <p>• Gitaran🎸 (bisalah nyanyi bareng😋)</p>
 
@@ -338,6 +449,21 @@ star.style.top=Math.random()*100+"vh";
 star.style.animationDelay=Math.random()*5+"s";
 
 document.body.appendChild(star);
+
+}
+
+</script>
+
+<script>
+
+function playSong(song){
+
+const music =
+document.getElementById("bgMusic");
+
+music.src = song;
+
+music.play();
 
 }
 

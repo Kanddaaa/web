@@ -326,6 +326,38 @@ opacity:1;
 transform:translateY(0);
 }
 
+#aboutPage{
+
+transition:.8s ease;
+
+}
+
+#galleryPage{
+
+display:none;
+
+opacity:0;
+
+transform:translateY(100px);
+
+transition:.8s ease;
+
+}
+
+.gallery-title{
+
+text-align:center;
+
+font-size:clamp(2rem,6vw,3rem);
+
+margin-top:50px;
+
+color:white;
+
+text-shadow:
+0 0 10px #ff69b4,
+0 0 20px #ff69b4;
+
 }
 
 </style>
@@ -365,6 +397,8 @@ Ga pengen pake musik? scroll aja
 <audio id="bgMusic"></audio>
 
 </div>
+
+<div id="aboutPage">
 
 <div class="card">
 
@@ -432,6 +466,14 @@ LANJUT YUK
 
 </div>
 
+<div id="galleryPage">
+
+<h1 class="gallery-title">
+📸 GALERI KAKANDA
+</h1>
+
+</div>
+
 </div>
 
 <script>
@@ -481,7 +523,7 @@ setTimeout(()=>{
 
 button.classList.remove("clicked");
 
-},700);
+},1500);
 
 currentSong=
 playlist.indexOf(song);

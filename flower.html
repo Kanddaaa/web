@@ -329,6 +329,8 @@ function bloomFlowers(){
 
 for(let i=0;i<50;i++){
 
+setTimeout(()=>{
+
 let flower =
 document.createElement("div");
 
@@ -336,13 +338,26 @@ flower.classList.add("flower");
 
 flower.innerHTML = "🌸";
 
-flower.style.left =
-(40 + Math.random()*20)+"vw";
-
-flower.style.top =
-"40vh";
+flower.style.left = "50vw";
+flower.style.top = "50vh";
 
 document.body.appendChild(flower);
+
+const randomTop =
+Math.random()*70 + 10;
+
+const randomLeft =
+Math.random()*80 + 10;
+
+setTimeout(()=>{
+
+flower.style.top =
+randomTop + "vh";
+
+flower.style.left =
+randomLeft + "vw";
+
+},50);
 
 setTimeout(()=>{
 
@@ -350,7 +365,7 @@ flower.remove();
 
 },5000);
 
-}
+}, i*30);
 
 }
 

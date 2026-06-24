@@ -389,7 +389,7 @@ img.style.animation =
 
 document.body.appendChild(img);
 
-const cols = 6;
+const cols = 3;
 
 const row =
 Math.floor(activeGifts.length / cols);
@@ -398,12 +398,10 @@ const col =
 activeGifts.length % cols;
 
 const randomTop =
-10 + (row * 20) +
-(Math.random()*6);
+8 + (row * 13);
 
 const randomLeft =
-10 + (col * 15) +
-(Math.random()*6);
+15 + (col * 30);
 
 setTimeout(()=>{
 

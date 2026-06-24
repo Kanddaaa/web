@@ -486,6 +486,41 @@ opacity:0;
 }
 
 }
+
+.page-exit{
+
+animation:
+portalFlower 1.5s ease forwards;
+
+}
+
+@keyframes portalFlower{
+
+0%{
+
+transform:
+scale(1)
+rotate(0deg);
+
+}
+
+40%{
+
+transform:
+scale(1.1)
+rotate(2deg);
+
+}
+
+100%{
+
+transform:
+scale(0)
+rotate(12deg);
+
+}
+
+}
      
 </style>
 </head>
@@ -519,7 +554,7 @@ onclick="playSong('until-i-found-you.mp3', this)">
 
 <p class="music-note">
 Ga pengen pake musik? scroll aja
-Pengen pause? refresh aja
+Pengen pause musik? refresh aja
 </p>
 
 <audio id="bgMusic"></audio>
@@ -540,7 +575,7 @@ Pengen pause? refresh aja
 
 <p>Status: Jarang pasang status😭</p>
 
-<p>Rambut keriting 3A🥦</p>
+<p>Rambut jembyt (keriting🥦)</p>
 
 <p>Suka warna pink🤗</p>
 
@@ -662,9 +697,10 @@ Coba Tekan
   
 </div>
 
-<a href="flower.html"
-class="gallery-btn">
-🌸 Lesgo Halaman Terakhir 🌸
+<a href="#"
+class="gallery-btn"
+onclick="goFlower()">
+🌸 Letsgo Halaman Terakhir 🌸
 </a>
 
 </div>
@@ -853,6 +889,42 @@ index++;
 }
 
 },500);
+
+}
+
+function goFlower(){
+
+for(let i=0;i<40;i++){
+
+let flower =
+document.createElement("div");
+
+flower.classList.add("flower");
+
+flower.innerHTML="🌸";
+
+flower.style.left=
+Math.random()*100+"vw";
+
+flower.style.top=
+Math.random()*100+"vh";
+
+document.body.appendChild(flower);
+
+}
+
+document.querySelector(
+".container"
+).classList.add(
+"page-exit"
+);
+
+setTimeout(()=>{
+
+window.location.href=
+"flower.html";
+
+},1500);
 
 }
   

@@ -31,7 +31,7 @@ padding:40px 20px;
 
 opacity:0;
 
-animation:fadeIn 1.6s ease forwards;
+animation:fadeIn 2.0s ease forwards;
 
 }
 
@@ -327,7 +327,7 @@ flower.remove();
 
 function bloomFlowers(){
 
-for(let i=0;i<20;i++){
+for(let i=0;i<50;i++){
 
 let flower =
 document.createElement("div");
@@ -353,6 +353,16 @@ flower.remove();
 }
 
 }
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+bloomFlowers();
+
+},300);
+
+});
 
 /* hadiah */
 

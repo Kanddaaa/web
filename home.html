@@ -486,52 +486,6 @@ opacity:0;
 }
 
 }
-
-.flowerBurst{
-
-position:fixed;
-
-left:50%;
-
-top:50%;
-
-font-size:30px;
-
-pointer-events:none;
-
-z-index:99999;
-
-animation:
-burstFlower 1.2s ease-out forwards;
-
-}
-
-@keyframes burstFlower{
-
-from{
-
-transform:
-translate(-50%,-50%)
-scale(.2);
-
-opacity:1;
-
-}
-
-to{
-
-transform:
-translate(
-calc(-50% + var(--x)),
-calc(-50% + var(--y))
-)
-scale(2);
-
-opacity:0;
-
-}
-
-}
      
 </style>
 </head>
@@ -587,6 +541,8 @@ Pengen pause musik? refresh aja
 <p>Status: Jarang pasang status😭</p>
 
 <p>Rambut jembyt (keriting🥦)</p>
+
+<p>Pendiam kalau baru kenal</p>
 
 <p>Suka warna pink🤗</p>
 
@@ -708,9 +664,8 @@ Coba Tekan
   
 </div>
 
-<a href="#"
-class="gallery-btn"
-onclick="goFlower()">
+<a href="flower.html"
+class="gallery-btn">
 🌸 Letsgo Halaman Terakhir 🌸
 </a>
 
@@ -900,49 +855,6 @@ index++;
 }
 
 },500);
-
-}
-
-function goFlower(){
-
-for(let i=0;i<80;i++){
-
-const flower =
-document.createElement("div");
-
-flower.className =
-"flowerBurst";
-
-flower.innerHTML = "🌸";
-
-flower.style.setProperty(
-"--x",
-(Math.random()*800-400)+"px"
-);
-
-flower.style.setProperty(
-"--y",
-(Math.random()*800-400)+"px"
-);
-
-document.body.appendChild(
-flower
-);
-
-setTimeout(()=>{
-
-flower.remove();
-
-},1200);
-
-}
-
-setTimeout(()=>{
-
-window.location.href =
-"flower.html";
-
-},1200);
 
 }
   

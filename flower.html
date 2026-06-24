@@ -201,6 +201,49 @@ text-decoration:none;
 
 }
 
+.giftGif{
+
+position:fixed;
+
+width:180px;
+
+max-width:40vw;
+
+border-radius:20px;
+
+z-index:9999;
+
+pointer-events:none;
+
+}
+
+@keyframes giftExplode{
+
+from{
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%)
+scale(0);
+
+opacity:0;
+
+}
+
+to{
+
+transform:
+translate(-50%,-50%)
+scale(1);
+
+opacity:1;
+
+}
+
+}
+
 </style></head><body><h1 class="title">
 🌸 A FLOWER FOR YOU 🌸
 </h1><p class="message">
@@ -292,18 +335,41 @@ flower.remove();
 
 function showGift(){
 
-const gift =
-document.getElementById(
-"giftContent"
-);
+const gifts = [
 
-gift.style.display="block";
+"gift1.gif",
+"gift2.gif",
+"gift3.gif",
+"gift4.gif",
+"gift5.gif"
+
+];
+
+gifts.forEach((gif,index)=>{
 
 setTimeout(()=>{
 
-gift.style.opacity="1";
+const img =
+document.createElement("img");
 
-},50);
+img.src = gif;
+
+img.classList.add("giftGif");
+
+img.style.top =
+Math.random()*60 + 10 + "vh";
+
+img.style.left =
+Math.random()*70 + 10 + "vw";
+
+img.style.animation =
+"giftExplode .5s ease forwards";
+
+document.body.appendChild(img);
+
+},index*200);
+
+});
 
 }
 

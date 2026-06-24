@@ -101,15 +101,17 @@ pointer-events:none;
 
 z-index:1000;
 
-transform:translate(-50%,-50%);
+transform:translate(-50%,-50%) scale(1);
 
 opacity:0;
 
-animation:flowerFade 2.0s ease forwards;
+animation:flowerFade .4s ease forwards;
 
 transition:
 top .8s ease,
-left .8s ease;
+left .8s ease,
+transform 1s ease,
+opacity 1s ease;
 
 }
 
@@ -393,7 +395,16 @@ randomTop + "vh";
 flower.style.left =
 randomLeft + "vw";
 
-},50);
+},300);
+
+setTimeout(()=>{
+
+flower.style.transform =
+"translate(-50%,-50%) scale(1.8)";
+
+flower.style.opacity = "0";
+
+},3500);
 
 setTimeout(()=>{
 

@@ -91,6 +91,22 @@ opacity:0;
 
 }
 
+.burstFlower{
+
+position:fixed;
+
+font-size:24px;
+
+pointer-events:none;
+
+transition:
+top .8s ease,
+left .8s ease;
+
+z-index:1000;
+
+}
+
 .title{
 
 font-size:clamp(1.3rem,4vw,2rem);
@@ -334,7 +350,7 @@ setTimeout(()=>{
 let flower =
 document.createElement("div");
 
-flower.classList.add("flower");
+flower.classList.add("burstFlower");
 
 flower.innerHTML = "🌸";
 
@@ -366,6 +382,8 @@ flower.remove();
 },5000);
 
 }, i*30);
+
+}
 
 }
 
